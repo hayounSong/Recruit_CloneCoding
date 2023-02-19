@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<style>
+    .fieldError {
+        border-color: #bd2130;
+    } </style>
+<style>
+    .fieldError {
+        border-color: #bd2130;
+    } </style>
+<body>
+<div class="container">
+<!--    <div th:replace="fragments/bodyHeader :: bodyHeader"/>-->
+    <form role="form" action="/apply" th:object="${applyForm}"
+          method="post">
+        <div class="form-group">
+            <label th:for="name">이름</label>
+            <input type="text" th:field="*{name}" class="form-control" placeholder="이름을 입력하세요"
+                   th:class="${#fields.hasErrors('name')}? 'form-control fieldError' : 'form-control'">
+        </div>
+        <div class="form-group">
+            <label th:for="partName">파트</label>
+            <select th:field="*{partName}" class="form-control">
+                <option value="웹">웹</option>
+                <option value="서버">서버</option>
+                <option value="안드로이드">안드로이드</option>
+                <option value="ios">ios</option>
+                <option value="기획">기획</option>
+                <option value="디자인">디자인</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label th:for="address">주소</label>
+            <input type="text" th:field="*{address}" class="form-control" placeholder="주소를 입력하세요"
+                  >
+        </div>
+        <div class="form-group">
+            <label th:for="subway">근처 역</label>
+            <input type="text" th:field="*{subway}" class="form-control" placeholder="근처 역을 입력하세요"
+            >
+        </div>
+        <div class="form-group">
+            <label th:for="address">email</label>
+            <input type="text" th:field="*{email}" class="form-control" placeholder="이메일 주소를 입력하세요"
+            >
+        </div>
+        <div class="form-group">
+            <label th:for="school">학교</label>
+            <input type="text" th:field="*{school}" class="form-control" placeholder="학교를 입력하세요"
+            >
+        </div>
+        <div class="form-group">
+            <label th:for="major">전공</label>
+            <input type="text" th:field="*{major}" class="form-control" placeholder="전공을 입력하세요"
+            >
+        </div>
+<!--        <div class="form-group">-->
+<!--            <label th:for="isOb">오비 활동 여부</label>-->
+<!--            <input type="checkbox" th:field="*{isOb}" class="form-control" placeholder="오비 경험이 있으신가요?"-->
+<!--            >-->
+<!--        </div>-->
+
+        <div class="form-group">
+            <label th:for="question1">동아리에 지원하게 된 동기는?</label>
+            <input type="text" th:field="*{question1}" class="form-control" placeholder="질문 1번에 답해주세요"
+            >
+        </div>
+
+        <div class="form-group">
+            <label th:for="question2">어떤 회원이 되고 싶나요</label>
+            <input type="text"  th:field="*{question2}" class="form-control" placeholder="질문 2번에 답해주세요"
+            >
+        </div>
+        <div class="form-group">
+            <label th:for="question3">각오 한마디!</label>
+            <input type="text"  th:field="*{question3}" class="form-control" placeholder="질문 3번에 답해주세요"
+            >
+        </div>
+        <div class="form-group">
+            <label th:for="absenseStatus">휴학생인가요?</label>
+            <select th:field="*{absenseStatus}" class="form-control">
+                <option value="휴학">휴학</option>
+                <option value="재학">재학</option>
+                <option value="졸업">졸업</option>
+            </select>
+        </div>
+
+<!--        <div class="form-group">-->
+<!--            <label th:for="city">도시</label>-->
+<!--            <input type="text" th:field="*{city}" class="form-control"-->
+<!--                   placeholder="도시를 입력하세요"> </div>-->
+<!--        <div class="form-group">-->
+<!--            <label th:for="street">거리</label>-->
+<!--            <input type="text" th:field="*{street}" class="form-control" placeholder="거리를 입력하세요">-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--            <label th:for="zipcode">우편번호</label>-->
+<!--            <input type="text" th:field="*{zipcode}" class="form-control"-->
+<!--                   placeholder="우편번호를 입력하세요"> </div>-->
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br/>
+
+</div> <!-- /container -->
+</body>
+</html>
