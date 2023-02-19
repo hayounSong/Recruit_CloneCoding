@@ -30,26 +30,28 @@ public class Applicant {
     private String school;
     private String major;
     private boolean isOb;
-    private TextArea question1;
-    private TextArea question2;
-    private TextArea question3;
+    private String question1;
+    private String question2;
+    private String question3;
 
     @Enumerated(EnumType.STRING)
     private AbsenseStatus absenseStatus;
 
 
-    public static Applicant createApplicant(Part part, String name, String address,String subway, String email,String school, String major, boolean isOb, TextArea question1, TextArea question2, TextArea question3){
+    public static Applicant createApplicant(Part part, String name, String address,String subway, String email,String school, String major, String question1, String question2, String question3,AbsenseStatus absenseStatus){
         Applicant applicant=new Applicant();
         applicant.setPart(part);
+        applicant.setAddress(address);
+        applicant.setEmail(email);
         applicant.setName(name);
         applicant.setSubway(subway);
         applicant.setSchool(school);
         applicant.setMajor(major);
-        applicant.setOb(isOb);
+
         applicant.setQuestion1(question1);
         applicant.setQuestion2(question2);
         applicant.setQuestion3(question3);
-
+        applicant.setAbsenseStatus(absenseStatus);
         return applicant;
     }
 

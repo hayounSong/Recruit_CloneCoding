@@ -16,6 +16,6 @@ public class PartService {
     }
 
     public Part findPart(String name){
-        return partRepository.findByName(name);
+        return partRepository.findByName(name).get(0);
     }
 }
