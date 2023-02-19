@@ -28,5 +28,8 @@ public class ApplicantService {
         return applicantRepository.findAll();
     }
 
+    public List<Applicant> findByPart(int part_id){
+        return applicantRepository.findByPart(part_id);
+    }
 
 }

@@ -1,24 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>동아리 지원하기</title>
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+<div class="container">
+<!--    <div th:replace="fragments/bodyHeader :: bodyHeader" />-->
+    <div class="jumbotron"> <h1>SOPT 리크루팅</h1>
+        <p class="lead">동아리에 지원한다면!</p> <p>
+            <a class="btn btn-lg btn-secondary" href="/apply">지원하기 </a>
+        <p class="lead">동아리 운영진이라면! 현재 지원상황 확인하기!</p>
+        <p>
+            <a class="btn btn-lg btn-info" href="/check/서버">서버</a>
+            <a class="btn btn-lg btn-info" href="/check/웹">웹</a>
+        <a class="btn btn-lg btn-info" href="/check/안드로이드">안드로이드</a>
+        </p>
+        <p>
+        <a class="btn btn-lg btn-info" href="/check/ios">ios</a>
+        <a class="btn btn-lg btn-info" href="/check/기획">기획</a>
+        <a class="btn btn-lg btn-info" href="/check/디자인">디자인</a>
+        </p>
+    </div>
 
-<p> 동아리 지원에 오신 여러분을 환영합니다!</p>
-
-동아리 지원자라면!
-<a href="/apply"><button>동아리 지원하러 가기</button></a>
-
-
-동아리 운영진이라면!
-<a href="/android"><button>안드로이드</button></a>
-<a href="/server"><button>서버</button></a>
-<a href="/web"><button>웹</button></a>
-<a href="/ios"><button>ios</button></a>
-<a href="/plan"><button>기획</button></a>
-<a href="/design"><button>디자인</button></a>
-
+</div> <!-- /container -->
 </body>
 </html>
