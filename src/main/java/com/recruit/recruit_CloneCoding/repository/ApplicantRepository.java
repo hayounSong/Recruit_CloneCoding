@@ -31,8 +31,8 @@ public class ApplicantRepository {
         return em.createQuery("select a from Applicant a where a.name=:name",Applicant.class).setParameter("name",name).getResultList();
     }
 
-    public List<Applicant> findByPart(int part_id){
-        return em.createQuery("select a from Applicant a where a.part=:part_id",Applicant.class).setParameter("part_id",part_id).getResultList();
+    public List<Applicant> findByPart(String part_id){
+        return em.createQuery("select a from Applicant a where a.part.id=:part_id",Applicant.class).setParameter("part_id",part_id).getResultList();
     }
 
 

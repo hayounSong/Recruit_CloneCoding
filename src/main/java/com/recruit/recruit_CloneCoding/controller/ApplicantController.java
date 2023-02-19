@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller
 public class ApplicantController {
@@ -35,4 +38,16 @@ public class ApplicantController {
     applicantService.apply(applicant);
     return "redirect:/";
     }
+
+    @GetMapping(value = "/check/{partName}")
+    public String findPartApplicant(@PathVariable String partName, Model model){
+    Part part=partService.findPart(partName);
+    int partId=part.getId();
+    List<Applicant> applicantList= applicantService.findByPart(Integer.toString(partId));
+    model.addAttribute("applicants",applicantList);
+    model.addAttribute("partName",partName);
+    return "/applicantList";
+
+    }
+
 }
