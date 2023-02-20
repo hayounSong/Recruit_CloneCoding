@@ -8,7 +8,7 @@
 ![](https://velog.velcdn.com/images/hayounsong/post/d1a93758-4c84-4003-8498-c2ba34c1ec37/image.png)
 
 ### 파트별 지원자 현황 확인
-  <img src=""/>
+
 
 ![](https://velog.velcdn.com/images/hayounsong/post/4af8419d-60ca-4f00-bf3f-46dd852cafd9/image.png)
 
